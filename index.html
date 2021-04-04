@@ -5,8 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <!--Link to boot, fonts, img (eventually)-->
 </head>
 <body>
+    <header>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4 banner">Weather in Differnt Area Codes</h1>
+            <p class="lead banner">Use the search bar to check the weather in any city!</p>
+          </div>
+        </div>
+      </header>
     
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="search-bar">
+              <nav class="navbar navbar-light bg-light">
+              <form class="form-inline">
+                <input class="search-input form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <br><br>
+                <button id="search-button" class="btn btn-outline-success my-2 my-sm-0" type="submit"><img src="./Assets/Images/find.png" alt="Search" height="30px" width="30px"></button>
+              </form>
+              </nav>
+              <div>
+                <h4 id="recentSearch">Recently Seached:</h4>
+              </div>
+            <div id="city-buttons"></div> 
+            </div>
+          </div>
+  
+        <div class="col-lg-9 col-md-9 col-sm-12">
+          <div class="main-dash">
+            <h2 class="city-name"></h2>
+            <p class="info temp"></p>
+            <p class="info humidity"></p>
+            <p class="info wind"></p>
+            <p class="info uvIndex">UV Index: <span id="uvIndexSpan"></p>
+  
+            <h3 class="forecast-text">5-Day Forecast:</h3>
+            <div class="card">
+                <h5 id="date0" class="card-title"></h5>
+                <img class="weather-icon0" src="">
+                <p id="temp0" class="card-text"></p>
+                <p id="humidity0" class="card-text"></p>
+            </div> 
+  
+            <div class="card">
+              <h5 id="date1" class="card-title"></h5>
+              <img class="weather-icon1" src="">
+              <p id="temp1" class="card-text"></p>
+              <p id="humidity1" class="card-text"></p>
+          </div> 
+  
+          <div class="card">
+            <h5 id="date2" class="card-title"></h5>
+            <img class="weather-icon2" src="">
+            <p id="temp2" class="card-text"></p>
+            <p id="humidity2" class="card-text"></p>
+        </div> 
+  
+        <div class="card">
+          <h5 id="date3" class="card-title"></h5>
+          <img class="weather-icon3" src="">
+          <p id="temp3" class="card-text"></p>
+          <p id="humidity3" class="card-text"></p>
+      </div> 
+  
+        <div class="card">
+          <h5 id="date4" class="card-title"></h5>
+          <img class="weather-icon4" src="">
+          <p id="temp4" class="card-text"></p>
+          <p id="humidity4" class="card-text"></p>
+      </div> 
+        </div>
+        </div>
+        </div>
+      </div>
 </body>
 </html>
