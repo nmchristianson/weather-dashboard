@@ -22,17 +22,18 @@ $(document).ready(function(){
     
         $("#city-buttons").append(savedBtn);
     }
-    
+    //api for finding the weather
+    var APIKey = "39c72bd60849c57e86e67367a53f8e2d";
+
     function findWeather() {
         //Prevents the auto-refresh from happening when a button is clicked and this function is run
-        event.preventDefault();
+        var event.preventDefault();
     
         //Unhide the area for weather
         main.attr("style", "opacity: 1;")
     
-        //api for finding the weather
-        var apiKey = "39c72bd60849c57e86e67367a53f8e2d";
-        var queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`;
+        
+        var queryURL = "https://api.openweathermap.org/data/2.5/onecall?" + cityName = "&appid=" + APIKey;
         
         $.ajax({
             url: queryURL,
@@ -46,7 +47,7 @@ $(document).ready(function(){
         
         let lat = response.coord.lat;
         let lon = response.coord.lon;
-        var forecastURL = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`;
+        var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?" + cityName = "&appid=" + APIKey;
     
         $.ajax({
             url: forecastURL,
