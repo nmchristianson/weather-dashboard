@@ -1,7 +1,7 @@
 //Selects the full document and gets it ready for any click events
 $(document).ready(function(){
 
-    let today = moment().format("MMM Do YY"); 
+    let today = moment().format("dddd MMMM Do YYYY"); 
     let city;
     //Query selector of all html tags with the class = "main-dash"
     var main = $(".main-dash");
@@ -23,17 +23,19 @@ $(document).ready(function(){
         $("#city-buttons").append(savedBtn);
     }
     //api for finding the weather
-    var APIKey = "39c72bd60849c57e86e67367a53f8e2d";
+    const apiKey = "39c72bd60849c57e86e67367a53f8e2d";
+    const inputVal = input.value;
+
 
     function findWeather() {
         //Prevents the auto-refresh from happening when a button is clicked and this function is run
-        var event.preventDefault();
+        //var event.preventDefault();
     
         //Unhide the area for weather
         main.attr("style", "opacity: 1;")
     
         
-        var queryURL = "https://api.openweathermap.org/data/2.5/onecall?" + cityName = "&appid=" + APIKey;
+        const URL = 'api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid={API key}';
         
         $.ajax({
             url: queryURL,
@@ -47,7 +49,7 @@ $(document).ready(function(){
         
         let lat = response.coord.lat;
         let lon = response.coord.lon;
-        var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?" + cityName = "&appid=" + APIKey;
+        var forecastURL = 'api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid={API key}';
     
         $.ajax({
             url: forecastURL,

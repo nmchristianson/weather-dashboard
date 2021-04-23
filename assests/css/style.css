@@ -14,7 +14,7 @@ body {
     }
   
     .container {
-      position: relative;
+      position: static;
     }
   
     .jumbotron {
@@ -31,9 +31,9 @@ body {
     }
   
     .search-bar {
-      background-color: rgb(247, 55, 87);
-      border: 3px solid rgb(253, 217 163);
-      color: rgb(253, 217, 163);
+      background-color: rgb(250, 207, 142);
+      border: 3px solid rgb(0, 0, 0);
+      color: rgb(0, 0, 0);
       padding: 5px;
       margin: 20px;
       height: 500px;
@@ -45,14 +45,14 @@ body {
       padding: 5px;
       height: 50px;
       width: 50px;
-      border: 1px solid rgb(253, 217, 163);
+      border: 1px solid rgb(0, 0, 0);
     }
   
     .main-dash {
       opacity: 0;
-      background-color: rgb(247, 55, 87);
-      border: 5px solid rgb(253, 217, 163);
-      color: rgb(253, 217, 163);
+      background-color: rgb(250, 207, 142);
+      border: 3px solid rgb(0, 0, 0);
+      color: rgb(0, 0, 0);
       padding: 20px;
       margin-left: 40px;
       margin-top: 20px;
@@ -71,7 +71,7 @@ body {
       width: 100%;
       background-color: rgb(59, 59, 59);
       padding: 5px;
-      border: 1px solid rgb(107, 107, 107);
+      border: 1px solid rgb(83, 83, 83);
       margin-top: 8px;
       margin-bottom: 8px;
     }
@@ -100,7 +100,7 @@ body {
   
     #uvIndexSpan {
       background-color: white;
-      border-radius: 50%;
+      border-radius: 75%;
       border: 1px solid black;
       padding: 8px;
     }
