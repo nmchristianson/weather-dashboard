@@ -23,33 +23,35 @@ $(document).ready(function(){
         $("#city-buttons").append(savedBtn);
     }
     //api for finding the weather
-    const apiKey = "39c72bd60849c57e86e67367a53f8e2d";
-    const inputVal = input.value;
+    
 
 
     function findWeather() {
         //Prevents the auto-refresh from happening when a button is clicked and this function is run
-        //var event.preventDefault();
+        event.preventDefault();
     
         //Unhide the area for weather
         main.attr("style", "opacity: 1;")
     
-        
-        const URL = 'api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid={API key}';
+        //const apiKey = api.openweathermap.org/data/2.5/weather?id=524901&appid=14280b4cf90737fb6ad3647abe3b6425;
+        //const inputVal = input.value;
+        //console.log(inputVal);
+
+        var URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=14280b4cf90737fb6ad3647abe3b6425`;
         
         $.ajax({
-            url: queryURL,
+            url: URL,
             method: "GET"
-        }).then(function (response) {
-    
+        }).then(function(response) {
+            
             $(".city-name").text(`${response.name} (${today})`);
             $(".temp").text("Temperature: " + Math.floor((response.main.temp - 273.15) * 1.80 + 32) + "\xB0F");
             $(".humidity").text("Humidity: " + response.main.humidity + "%");
             $(".wind").text("Wind Speed: " + Math.floor((response.wind.speed)*2.237) + "mph");
         
-        let lat = response.coord.lat;
-        let lon = response.coord.lon;
-        var forecastURL = 'api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid={API key}';
+         let lat = response.coord.lat;
+         let lon = response.coord.lon;
+        var forecastURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=14280b4cf90737fb6ad3647abe3b6425`;
     
         $.ajax({
             url: forecastURL,
@@ -73,7 +75,7 @@ $(document).ready(function(){
                 $(`#date${i}`).text(day);
     
                 let icon = response.daily[i].weather[0].icon;
-                $(`.weather-icon${i}`).attr("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
+                $(`.weather-icon${i}`).attr("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
     
                 let futureTempMin = Math.floor((response.daily[i].temp.min - 273.15) * 1.80 + 32);
                 let futureTempMax = Math.floor((response.daily[i].temp.max - 273.15) * 1.80 + 32);
